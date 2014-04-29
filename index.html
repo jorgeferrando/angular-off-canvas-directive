@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Angular Off Canvas Test</title>
+    <link href="http:////netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <style>
+
+
+        /* hide the horizontal scrollbar */
+        html {
+            overflow-x: hidden;
+        }
+
+        /* make all parent containers 100% height */
+        html, body {
+            height: 100%;
+        }
+
+        .container {
+            width: 100% !important;
+        }
+
+        /* move the toggle button to the left and give it
+           some breathing room */
+        .navbar-toggle {
+            float: left;
+            margin-left: 10px;
+            display:block !important;
+        }
+
+        /* sidebar */
+        .sidebar-offcanvas {
+            -webkit-transition: left .3s ease-in;
+            -most-transition: left .3s ease-in;
+            transition: left .3s ease-in;
+            z-index:1000;
+            left: -15%;
+            width: 15%;
+            position: absolute;
+            top: 50px;
+            height: 94.5%;
+            background-color: #F7F7F7;
+            padding: 0px;
+        }
+
+        .sidebar-offcanvas.active {
+            left: 0%;
+        }
+
+        @media screen and (max-width: 767px) {
+            .sidebar-offcanvas {
+                left: -80%;
+                width: 80%;
+            }
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<div class="navbar navbar-static-top navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+
+
+
+
+            <!--
+
+                you just need to create a div, button or what ever you want to fire the event
+                then set the class of the element that should act as off-canvas
+
+            -->
+            <div data-off-canvas data-toggle-class="sidebar-offcanvas"></div>
+
+
+
+
+
+            <a href="" class="navbar-brand">Off Canvas Example</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+
+
+        <!--
+
+            This is the element that is going to act as an off-canvas menu
+
+        -->
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 sidebar-offcanvas">
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+                <li>Item 5</li>
+            </ul>
+        </div>
+
+
+
+
+        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+            <p>The Content</p>
+        </div>
+    </div>
+</div>
+
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.11/require.min.js" data-main="js/main.js"></script>
+</body>
+</html>
